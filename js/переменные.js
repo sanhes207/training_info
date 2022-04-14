@@ -15,3 +15,14 @@ console.log(obj.a);
 
 console.log(number1); //выводит undefind
 var number1 = 7; //старый формат(не используются) видим до объявления в скопе
+
+//camelCase
+//snake_case - не встречается в JS
+//UPPER_SNAKE_CASE - используются для констант
+const COLOR_RED = '#F00';
+
+//нижнее пдчеркивание перед переменной, обозночает ее константность
+const _apiBase
+
+//Kebab-case
+//PascalCase - используется для обозночение классов

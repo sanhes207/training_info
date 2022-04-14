@@ -38,3 +38,4 @@ console.log(obj["name"]);
 //Массив - частный случай объектов
 let arr = ['plum.png', 'orange.jpg', 6, {}, []]; //массивы комплексны
 console.log(arr[1]); //orange.jpg
+
