@@ -20,6 +20,7 @@ const options = {
 options.makeTest();
 //обращение к свойству объекта
 console.log(options.name);
+console.log(options[name]);
 //удаление объекта
 delete options.name;
 console.log(options);
@@ -46,6 +47,17 @@ console.log(Object.keys(options));
 console.log(Object.keys(options).length);
 
 //Деструктуризация
-//Вытаскивание из вложенных в объект, других объектов, его свойств в отдельную переменную
+//Вытаскивание из вложенного объекта его свойств в отдельные переменные
+//прописанные в фигурных скобках
+//слева список переменных на которые разбивается объект, справа сам объект который нужно разбить на переменные
 const {border, bg} = options.colors;
+//colors{
+//  border: black,
+//  bg: red
+//}
+//boder = black / bg = red
 console.log(border);
+//для указание других переменных, новые названия указываются через :
+const {border, bg: backGround} = options.colors;
+//если свойств в объекте изначально нет, они приравниваются
+const {value = 100, bg: backGround} = options.colors;
