@@ -1,16 +1,28 @@
-function findMaxNumber(a, b, c, d) {
-  const arr = [a, b, c, d];
-  let max = a;
-  for (let i = 0; i < arr.length; i++) {
-      if (typeof(arr[i] !== 'number')){
-          return 0;
-      }
-      if (arr[i] > max) {
-          max = arr[i];
-      }
-  }
-  return max;
+function fib(num) {
+    if (num <= 0 || typeof(num) != 'number' || !Number.isInteger(num)) {
+        return '';
+    }
+
+    let result = '',
+        fib1 = 0,
+        fib2 = 1;
+
+    for (let i = 1; i <= num; i++) {
+        if (i == 0) {
+            result += `${fib1}`;
+        } else {
+            result += ` ${fib1}`;
+        }
+
+        let buf = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = buf;
+    }
+
+    console.log(result);
 }
 
-console.log(findMaxNumber(1, 5, 6.6, 11));
-console.log(findMaxNumber(1, 5, '6', '10'));
+fib(4);
+fib(7);
+fib('7');
+fib('0');
