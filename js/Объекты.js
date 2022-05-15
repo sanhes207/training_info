@@ -60,4 +60,4 @@ console.log(border);
 //для указание других переменных, новые названия указываются через :
 const {border, bg: backGround} = options.colors;
 //если свойств в объекте изначально нет, они приравниваются
-const {value = 100, bg: backGround} = options.colors;
+const {value = 100, bg:backG = 7} = options.colors;
