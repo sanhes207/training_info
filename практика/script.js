@@ -1,28 +1,38 @@
-function fib(num) {
-    if (num <= 0 || typeof(num) != 'number' || !Number.isInteger(num)) {
-        return '';
+const personalPlanPeter = {
+    name: 'Peter',
+    age: 29,
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        let {age} = plan,
+            languages = plan.skills.languages;
+        return `Мне ${age} и я владею языками: ${languages.join(' ').toUpperCase()} `;
     }
+};
 
-    let result = '',
-        fib1 = 0,
-        fib2 = 1;
+personalPlanPeter.showAgeAndLangs(personalPlanPeter);
 
-    for (let i = 1; i <= num; i++) {
-        if (i == 0) {
-            result += `${fib1}`;
-        } else {
-            result += ` ${fib1}`;
-        }
-
-        let buf = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = buf;
-    }
-
-    console.log(result);
+function showExpirience(plan) {
+    let {exp} = plan.skills;
+    return exp;
 }
 
-fib(4);
-fib(7);
-fib('7');
-fib('0');
+showExpirience(personalPlanPeter);
+
+function showProgrammingLangs(plan) {
+    let phrase = '';
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        phrase += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+    console.log(phrase);
+}
+
+showProgrammingLangs(personalPlanPeter);
+

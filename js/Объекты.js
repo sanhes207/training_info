@@ -26,7 +26,7 @@ delete options.name;
 console.log(options);
 
 let counter = 0;
-//перебор всех св-в объекта 
+//перебор всех св-в объекта. Проходит по св-вам объектов в произвольном порядке.
 for (let key in options) {
   if (typeof(options[key]) === 'object'){
     for (let i in options[key]) {
