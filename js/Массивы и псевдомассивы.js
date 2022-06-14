@@ -53,3 +53,25 @@ function compareNum(a, b) {
 
 //Псевдомассивы - объект, структура которого совпадает с массивом
 //однако, не имеет методов(просто хранит данные)
+
+// Массивы как и объекты можно деструктуризирвать
+
+// Данный пример показывает деструктуризацию посредством ссылки
+const profile = ['Александ', 'Николаевич', 'vk.com'];
+
+const [firstname, lastname, website] = profile;
+
+console.log(firstname);
+console.log(lastname);
+console.log(website);
+
+// Здесь деструктуризация происходит на прямую
+const [firstname, lastname, website] = [
+  'Александ', 
+  'Николаевич', 
+  'vk.com'
+];
+
+console.log(firstname);
+console.log(lastname);
+console.log(website);
